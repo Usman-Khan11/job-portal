@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('cover_letter')->nullable();
             $table->enum('status', ['applied', 'shortlisted', 'interviewing', 'hired', 'rejected'])->default('applied');
             $table->timestamp('applied_at')->useCurrent();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

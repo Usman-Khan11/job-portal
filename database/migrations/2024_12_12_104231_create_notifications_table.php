@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->text('message');
             $table->enum('status', ['unread', 'read'])->default('unread');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

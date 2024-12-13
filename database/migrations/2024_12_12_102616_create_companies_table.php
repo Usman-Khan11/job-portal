@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unique();
+            $table->string('company_name', 150)->nullable();
+            $table->string('website', 255)->nullable();
             $table->string('phone', 20)->nullable();
-            $table->string('resume', 200)->nullable();
-            $table->string('linkedin_profile', 255)->nullable();
-            $table->string('portfolio', 255)->nullable();
+            $table->text('address')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('job_type', ['full_time', 'part_time', 'contract', 'freelance']);
             $table->string('salary', 50)->nullable();
             $table->enum('status', ['open', 'closed'])->default('open');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
