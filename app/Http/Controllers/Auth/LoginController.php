@@ -20,7 +20,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         $data["page_title"] = "Login";
-        return view('user.auth.login', $data);
+        return view('users.auth.login', $data);
     }
 
     public function login(Request $request)
@@ -76,6 +76,6 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('user.login')->withSuccess('You have been logged out.');
+        return redirect()->route('users.login')->withSuccess('You have been logged out.');
     }
 }
