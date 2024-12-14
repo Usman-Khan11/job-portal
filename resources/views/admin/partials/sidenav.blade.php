@@ -13,10 +13,17 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner">
-        <li class="menu-item">
+        <li class="menu-item {{ menuActive('admin.home') }}">
             <a href="{{ route('admin.home') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                 <div data-i18n="Dashboard">Dashboard</div>
+            </a>
+        </li>
+
+        <li class="menu-item {{ menuActive('admin.category*') }}">
+            <a href="{{ route('admin.category') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-brand-producthunt"></i>
+                <div data-i18n="Category">Category</div>
             </a>
         </li>
     </ul>
